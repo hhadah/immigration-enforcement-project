@@ -138,6 +138,29 @@ CPS_dates <- left_join(CPS_dates,
 CPS_dates <- CPS_dates |>
   mutate(first_treat = case_when(!is.na(activation_year) ~ activation_year,
                                  TRUE ~ 0))
+
+# Create the year_month variable as a numerical value YYYYMM
+CPS_dates$year_month <- CPS_dates$year * 100 + CPS_dates$month
+
+# To see the structure of the new variable
+head(CPS_dates$year_month)
+
+# Create the year_month_treat variable as a numerical value YYYYMM
+CPS_dates$year_month_treat <- CPS_dates$activation_year * 100 + CPS_dates$activation_month
+
+# To see the structure of the new variable
+head(CPS_dates$year_month_treat)
+
+### Create first_treat variable
+CPS_dates <- CPS_dates %>%
+  mutate(first_treat_year_month = case_when(
+    !is.na(year_month_treat) ~ year_month_treat,
+    TRUE ~ 0  # Set NA of type double for the TRUE case
+  ))
+
+# To see the structure of the new variable
+table(CPS_dates$first_treat_year_month)
+
 # Create poor health 
 # log school and SNAP
 # and poverty line variables
@@ -162,7 +185,7 @@ CPS_dates <- CPS_dates |>
                                   fsstatusc == 1 ~ 0)
                                  )
 # save
-write_csv(CPS_dates, file.path(datasets,"CPS_dates_county.csv"))
+write_csv(CPS_dates, file.path(big_data_dir,"CPS_dates_county.csv"))
 
 
 

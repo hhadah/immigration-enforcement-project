@@ -270,6 +270,7 @@ ggplot(mod_es$`Log School Lunch`, aes(x = event, y = estimate, ymin = conf.low, 
   labs(x = "Years post treatment", y = "Effect on log school lunch") +
   theme_customs()+  
   geom_hline(yintercept = 0, colour = "black", linetype = "dotted") +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high), show.legend = FALSE, linetype= 1, size = 1.1, color = "red") +
   theme(axis.text.y = element_text(size = 9)) +
   theme(axis.text.x = element_text(size = 9)) +
   theme(axis.title = element_text(color = "black",  size = 9)) +
@@ -287,6 +288,7 @@ ggplot(mod_es$`School Lunch`, aes(x = event, y = estimate, ymin = conf.low, ymax
   labs(x = "Years post treatment", y = "Effect on school lunch") +
   theme_customs()+  
   geom_hline(yintercept = 0, colour = "black", linetype = "dotted") +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high), show.legend = FALSE, linetype= 1, size = 1.1, color = "red") +
   theme(axis.text.y = element_text(size = 9)) +
   theme(axis.text.x = element_text(size = 9)) +
   theme(axis.title = element_text(color = "black",  size = 9)) +
@@ -304,6 +306,7 @@ ggplot(mod_es$`Log SNAP`, aes(x = event, y = estimate, ymin = conf.low, ymax = c
   labs(x = "Years post treatment", y = "Effect on log SNAP") +
   theme_customs()+  
   geom_hline(yintercept = 0, colour = "black", linetype = "dotted") +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high), show.legend = FALSE, linetype= 1, size = 1.1, color = "red") +
   theme(axis.text.y = element_text(size = 9)) +
   theme(axis.text.x = element_text(size = 9)) +
   theme(axis.title = element_text(color = "black",  size = 9)) +
@@ -321,6 +324,7 @@ ggplot(mod_es$`SNAP`, aes(x = event, y = estimate, ymin = conf.low, ymax = conf.
   labs(x = "Years post treatment", y = "Effect on SNAP") +
   theme_customs()+  
   geom_hline(yintercept = 0, colour = "black", linetype = "dotted") +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high), show.legend = FALSE, linetype= 1, size = 1.1, color = "red") +
   theme(axis.text.y = element_text(size = 9)) +
   theme(axis.text.x = element_text(size = 9)) +
   theme(axis.title = element_text(color = "black",  size = 9)) +
@@ -338,6 +342,7 @@ ggplot(mod_es$`Poverty Line`, aes(x = event, y = estimate, ymin = conf.low, ymax
   labs(x = "Years post treatment", y = "Effect on poverty line") +
   theme_customs()+  
   geom_hline(yintercept = 0, colour = "black", linetype = "dotted") +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high), show.legend = FALSE, linetype= 1, size = 1.1, color = "red") +
   theme(axis.text.y = element_text(size = 9)) +
   theme(axis.text.x = element_text(size = 9)) +
   theme(axis.title = element_text(color = "black",  size = 9)) +
@@ -355,6 +360,7 @@ ggplot(mod_es$`Food Insecure`, aes(x = event, y = estimate, ymin = conf.low, yma
   labs(x = "Years post treatment", y = "Effect on food insecure") +
   theme_customs()+  
   geom_hline(yintercept = 0, colour = "black", linetype = "dotted") +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high), show.legend = FALSE, linetype= 1, size = 1.1, color = "red") +
   theme(axis.text.y = element_text(size = 9)) +
   theme(axis.text.x = element_text(size = 9)) +
   theme(axis.title = element_text(color = "black",  size = 9)) +
@@ -372,6 +378,7 @@ ggplot(mod_es$`Food Insecure Child`, aes(x = event, y = estimate, ymin = conf.lo
   labs(x = "Years post treatment", y = "Effect on food insecure child") +
   theme_customs()+  
   geom_hline(yintercept = 0, colour = "black", linetype = "dotted") +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high), show.legend = FALSE, linetype= 1, size = 1.1, color = "red") +
   theme(axis.text.y = element_text(size = 9)) +
   theme(axis.text.x = element_text(size = 9)) +
   theme(axis.title = element_text(color = "black",  size = 9)) +

@@ -51,15 +51,24 @@ camcorder::gg_record(
   dpi = 300
 )
 theme_customs <- function() {
-  theme_minimal(base_family = "IBM Plex Sans Condensed") +
+  theme_minimal(base_family = "serif") +
     theme(panel.grid.minor = element_blank(),
+          panel.grid.major = element_blank(),
           plot.background = element_rect(fill = "white", color = NA),
-          plot.title = element_text(face = "bold"),
           axis.title = element_text(face = "bold"),
           strip.text = element_text(face = "bold"),
-          strip.background = element_rect(fill = "grey80", color = NA),
+          strip.background = element_rect(color="black", fill="white", size=1.5),
           legend.title = element_text(face = "bold", size = rel(1)),
-          legend.text = element_text(size = rel(1)))
+          axis.text.y  = element_text(size = 18),
+          axis.text.x  = element_text(size = 24),
+          axis.title.x = element_text(size = 28),
+          axis.title.y = element_text(size = 28),
+          panel.grid.major.x = element_blank(),
+          panel.grid.minor.x = element_blank(),
+          axis.line = element_line(colour = "black"),
+          legend.text = element_text(size = rel(1)),
+          plot.caption = element_markdown(hjust = 0, face = "italic", size = 14, lineheight = 1.2)) +
+    theme(plot.caption.position = "plot") 
 }
 
 theme_customs_map <- function() {

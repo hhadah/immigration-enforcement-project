@@ -4,18 +4,18 @@
 \centering
 \resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
 \begin{threeparttable}
-\begin{tabular}[t]{lccccc}
+\begin{tabular}[t]{lcccccccc}
 \toprule
-  & Poor Health & School Lunch & Log School Lunch & Log SNAP & SNAP\\
+  & Poor Health & School Lunch & Log School Lunch & Log SNAP & SNAP & Poverty Line & Food Insecure & Food Insecure Child\\
 \midrule
-.Dtreat & \num{0}*** & \num{0.019}*** & \num{0.164}*** & \num{0.109}*** & \num{0.014}***\\
- & (\num{0}) & (\num{0.003}) & (\num{0.025}) & (\num{0.019}) & (\num{0.002})\\
+.Dtreat & \num{0}*** & \num{0.019}*** & \num{0.164}*** & \num{0.109}*** & \num{0.014}*** & \num{0.011}*** & \num{0.004} & \num{0.035}***\\
+ & (\num{0}) & (\num{0.003}) & (\num{0.025}) & (\num{0.019}) & (\num{0.002}) & (\num{0.003}) & (\num{0.018}) & (\num{0.012})\\
 \midrule
-Observations & \num{976,648} & \num{976,648} & \num{976,648} & \num{976,648} & \num{976,648}\\
-Cohort FE & X & X & X & X & X\\
-Year FE & X & X & X & X & X\\
+Observations & \num{976,648} & \num{976,648} & \num{976,648} & \num{976,648} & \num{976,648} & \num{976,648} & \num{52,584} & \num{48,351}\\
+Cohort FE & X & X & X & X & X & X & X & X\\
+Year FE & X & X & X & X & X & X & X & X\\
 \bottomrule
-\multicolumn{6}{l}{\rule{0pt}{1em}* p $<$ 0.1, ** p $<$ 0.05, *** p $<$ 0.01}\\
+\multicolumn{9}{l}{\rule{0pt}{1em}* p $<$ 0.1, ** p $<$ 0.05, *** p $<$ 0.01}\\
 \end{tabular}
 \begin{tablenotes}
 \small
