@@ -8,6 +8,29 @@ CPS_dates <- read_csv(file.path(big_data_dir,"CPS_dates_county.csv")) |>
     filter(year <= 2019)
 
 CPS_dates  <- CPS_dates |>
+  mutate(OneHispanic = case_when(Grandparent_Type == "HWWW" ~ 1,
+                                 Grandparent_Type == "WHWW" ~ 1,
+                                 Grandparent_Type == "WWHW" ~ 1,
+                                 Grandparent_Type == "WWWH" ~ 1,
+                                 TRUE ~ 0),
+         TwoHispanic = case_when(Grandparent_Type == "HHWW" ~ 1,
+                                 Grandparent_Type == "HWHW" ~ 1,
+                                 Grandparent_Type == "HWWH" ~ 1,
+                                 Grandparent_Type == "WHHW" ~ 1,
+                                 Grandparent_Type == "WWHH" ~ 1,
+                                 Grandparent_Type == "WHWH" ~ 1,
+                                 TRUE ~ 0),
+         ThreeHispanic = case_when(Grandparent_Type == "HHHW" ~ 1,
+                                   Grandparent_Type == "HHWH" ~ 1,
+                                   Grandparent_Type == "HWHH" ~ 1,
+                                   Grandparent_Type == "WHHH" ~ 1,
+                                 TRUE ~ 0),
+         FourHispanic = case_when(Grandparent_Type == "HHHH" ~ 1,
+                                 TRUE ~ 0))
+CPS_dates  <- CPS_dates |>
+  filter(OneHispanic == 1)
+  
+CPS_dates  <- CPS_dates |>
   filter(county != 0)
 ### Run etwfe regressions: Event Study Table
 library(etwfe)

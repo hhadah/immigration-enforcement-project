@@ -5,7 +5,8 @@
 
 ### Load data
 CPS_dates <- read_csv(file.path(big_data_dir,"CPS_dates_county.csv")) |> 
-    filter(year <= 2019)
+    filter(year <= 2019)|> 
+    filter(Type == "Third Generation")
 
 CPS_dates  <- CPS_dates |>
   filter(county != 0)
@@ -40,7 +41,7 @@ ggplot(Hispanic_mod_es, aes(x = event, y = estimate, ymin = conf.low, ymax = con
   geom_text(aes(x = Inf, y = Hispanic_mod_avg$estimate, label = sprintf("ETWFE Estimate = %.2f (%.2f)", Hispanic_mod_avg$estimate, Hispanic_mod_avg$std.error)),
             hjust = 1.1, vjust = -1, color = "black")  # Text annotation
 
-ggsave(path = figures_wd, filename = "hispanic_event_study.png", dpi = 300)
+ggsave(path = figures_wd, filename = "thirdgen-hispanic_event_study.png", dpi = 300)
 
 models = list(
   "Poor Health" = etwfe(
@@ -145,16 +146,13 @@ modelsummary(
   gof_map     = gm,
   escape      = F,
   output     = "kableExtra",
-  title       = "Extended Two Way Fixed Effects \\label{tab:etwfe}") |>
+  title       = "Extended Two Way Fixed Effects: Third Generation \\label{tab:etwfe-thirdgen}") |>
   kable_styling(latex_options = c("scale_down", "HOLD_position")) |> 
   footnote(number = c("\\\\footnotesize{Each column is the results of the extended two-way fixed effects estimation. 
                       Standard errors are clustered on the county level.}",
-                      "\\\\footnotesize{The samples include first, second, third, and fourth+ generation Hispanic children ages 17 and below who live in intact families. 
-                      A first-generation Hispanic child is one that is born in a Spanish-speaking country. 
-                      A second-generation Hispanic child is one that is born in the United States with at least one parent born in a Spanish-speaking country.
+                      "\\\\footnotesize{The samples include third-generation Hispanic children ages 17 and below who live in intact families. 
                       Third-generation Hispanic immigrant children are native-born with native-born parents and at least one grandparent is born in a Spanish-speaking country.
-                      country.
-                      Fourth-generation+ are native born with native-born parents, all grandparents are born in the United States, and one parent self-reported Hispanic identity.}",
+                      }",
                       "\\\\footnotesize{Data source is the 1994-2019 Current Population Survey.}"),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T, fixed_small_size = T)
@@ -167,26 +165,21 @@ regression_tab  <- modelsummary(
   gof_map     = gm,
   escape      = F,
   output     = "latex",
-  title       = "Extended Two Way Fixed Effects \\label{tab:etwfe}") |>
+  title       = "Extended Two Way Fixed Effects: Third Generation \\label{tab:etwfe-thirdgen}") |>
   kable_styling(latex_options = c("scale_down", "HOLD_position")) |> 
   footnote(number = c("\\\\footnotesize{Each column is the results of the extended two-way fixed effects estimation. 
                       Standard errors are clustered on the county level.}",
-                      "\\\\footnotesize{The samples include first, second, third, and fourth+ generation Hispanic children ages 17 and below who live in intact families. 
-                      A first-generation Hispanic child is one that is born in a Spanish-speaking country. 
-                      A second-generation Hispanic child is one that is born in the United States with at least one parent born in a Spanish-speaking country.
-                      Third-generation Hispanic immigrant children are native-born with native-born parents and at least one grandparent is born in a Spanish-speaking country.
-                      country.
-                      Fourth-generation+ are native born with native-born parents, all grandparents are born in the United States, and one parent self-reported Hispanic identity.}",
-                      "\\\\footnotesize{Data source is the 1994-2019 Current Population Survey.}"),
+                      "\\\\footnotesize{The samples include second-generation Hispanic children ages 17 and below who live in intact families. 
+                     Third-generation Hispanic immigrant children are native-born with native-born parents and at least one grandparent is born in a Spanish-speaking country."),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T, fixed_small_size = T)
 
 
 regression_tab %>%
-  save_kable(file.path(tables_wd,"tab01-etwfe.tex"))
+  save_kable(file.path(tables_wd,"tab13-etwfe-third.tex"))
 
 regression_tab %>%
-  save_kable(file.path(thesis_tabs,"tab01-etwfe.tex"))
+  save_kable(file.path(thesis_tabs,"tab13-etwfe-third.tex"))
 
 ### Average effect
 average_model  <- list(
@@ -214,26 +207,22 @@ regression_tab  <- modelsummary(
   gof_map     = gm,
   escape      = F,
   output     = "latex",
-  title       = "Extended Two Way Fixed Effects: Aggregated Effects \\label{tab:etwfe-agg}") |>
+  title       = "Extended Two Way Fixed Effects: Aggregated Effects \\label{tab:etwfe-agg-thirdgen}") |>
   kable_styling(latex_options = c("scale_down", "HOLD_position")) |> 
   footnote(number = c("\\\\footnotesize{Each column is the results of the aggregat effects of extended two-way fixed effects estimation. 
                       Standard errors are clustered on the county level.}",
-                      "\\\\footnotesize{The samples include first, second, third, and fourth+ generation Hispanic children ages 17 and below who live in intact families. 
-                      A first-generation Hispanic child is one that is born in a Spanish-speaking country. 
-                      A second-generation Hispanic child is one that is born in the United States with at least one parent born in a Spanish-speaking country.
-                      Third-generation Hispanic immigrant children are native-born with native-born parents and at least one grandparent is born in a Spanish-speaking country.
-                      country.
-                      Fourth-generation+ are native born with native-born parents, all grandparents are born in the United States, and one parent self-reported Hispanic identity.}",
+                      "\\\\footnotesize{The samples include second-generation Hispanic children ages 17 and below who live in intact families.
+                      Third-generation Hispanic immigrant children are native-born with native-born parents and at least one grandparent is born in a Spanish-speaking country.}",
                       "\\\\footnotesize{Data source is the 1994-2019 Current Population Survey.}"),
            footnote_as_chunk = F, title_format = c("italic"),
            escape = F, threeparttable = T, fixed_small_size = T)
 
 
 regression_tab %>%
-  save_kable(file.path(tables_wd,"tab02-etwfe-agg.tex"))
+  save_kable(file.path(tables_wd,"tab14-etwfe-agg-third.tex"))
 
 regression_tab %>%
-  save_kable(file.path(thesis_tabs,"tab02-etwfe-agg.tex"))
+  save_kable(file.path(thesis_tabs,"tab14-etwfe-agg-third.tex"))
 
 ### Plots
 library(ggplot2)
@@ -260,7 +249,7 @@ ggplot(mod_es$`Poor Health`, aes(x = event, y = estimate, ymin = conf.low, ymax 
   geom_hline(yintercept = average_model$`Poor Health`$estimate, colour = "red", linetype = "dashed") +  # Dashed red line
   geom_text(aes(x = Inf, y = average_model$`Poor Health`$estimate, label = sprintf("ETWFE Estimate = %.4f (%.4f)", average_model$`Poor Health`$estimate, average_model$`Poor Health`$std.error)),
             hjust = 1.1, vjust = -1, color = "black")  # Text annotation
-ggsave(path = figures_wd, filename = "plot01-poor_health_event_study.png", dpi = 300)
+ggsave(path = figures_wd, filename = "plot49-poor_health_event_study-third.png", dpi = 300)
 
 ## Log School Lunch
 ggplot(mod_es$`Log School Lunch`, aes(x = event, y = estimate, ymin = conf.low, ymax = conf.high)) +
@@ -270,7 +259,6 @@ ggplot(mod_es$`Log School Lunch`, aes(x = event, y = estimate, ymin = conf.low, 
   labs(x = "Years post treatment", y = "Effect on log school lunch") +
   theme_customs()+  
   geom_hline(yintercept = 0, colour = "black", linetype = "dotted") +
-  geom_pointrange(aes(ymin = conf.low, ymax = conf.high), show.legend = FALSE, linetype= 1, size = 1.1, color = "red") +
   theme(axis.text.y = element_text(size = 9)) +
   theme(axis.text.x = element_text(size = 9)) +
   theme(axis.title = element_text(color = "black",  size = 9)) +
@@ -278,7 +266,7 @@ ggplot(mod_es$`Log School Lunch`, aes(x = event, y = estimate, ymin = conf.low, 
   geom_hline(yintercept = average_model$`Log School Lunch`$estimate, colour = "red", linetype = "dashed") +  # Dashed red line
   geom_text(aes(x = Inf, y = average_model$`Log School Lunch`$estimate, label = sprintf("ETWFE Estimate = %.4f (%.4f)", average_model$`Log School Lunch`$estimate, average_model$`Log School Lunch`$std.error)),
             hjust = 1.1, vjust = -1, color = "black")  # Text annotation
-ggsave(path = figures_wd, filename = "plot02-ln_schl_lunch_event_study.png", dpi = 300)
+ggsave(path = figures_wd, filename = "plot50-ln_schl_lunch_event_study-third.png", dpi = 300)
 
 ## School Lunch
 ggplot(mod_es$`School Lunch`, aes(x = event, y = estimate, ymin = conf.low, ymax = conf.high)) +
@@ -288,7 +276,6 @@ ggplot(mod_es$`School Lunch`, aes(x = event, y = estimate, ymin = conf.low, ymax
   labs(x = "Years post treatment", y = "Effect on school lunch") +
   theme_customs()+  
   geom_hline(yintercept = 0, colour = "black", linetype = "dotted") +
-  geom_pointrange(aes(ymin = conf.low, ymax = conf.high), show.legend = FALSE, linetype= 1, size = 1.1, color = "red") +
   theme(axis.text.y = element_text(size = 9)) +
   theme(axis.text.x = element_text(size = 9)) +
   theme(axis.title = element_text(color = "black",  size = 9)) +
@@ -296,7 +283,7 @@ ggplot(mod_es$`School Lunch`, aes(x = event, y = estimate, ymin = conf.low, ymax
   geom_hline(yintercept = average_model$`School Lunch`$estimate, colour = "red", linetype = "dashed") +  # Dashed red line
   geom_text(aes(x = Inf, y = average_model$`School Lunch`$estimate, label = sprintf("ETWFE Estimate = %.4f (%.4f)", average_model$`School Lunch`$estimate, average_model$`School Lunch`$std.error)),
             hjust = 1.1, vjust = -1, color = "black")  # Text annotation
-ggsave(path = figures_wd, filename = "plot03-schl_lunch_event_study.png", dpi = 300)
+ggsave(path = figures_wd, filename = "plot51-schl_lunch_event_study-third.png", dpi = 300)
 
 ## Log SNAP
 ggplot(mod_es$`Log SNAP`, aes(x = event, y = estimate, ymin = conf.low, ymax = conf.high)) +
@@ -306,7 +293,6 @@ ggplot(mod_es$`Log SNAP`, aes(x = event, y = estimate, ymin = conf.low, ymax = c
   labs(x = "Years post treatment", y = "Effect on log SNAP") +
   theme_customs()+  
   geom_hline(yintercept = 0, colour = "black", linetype = "dotted") +
-  geom_pointrange(aes(ymin = conf.low, ymax = conf.high), show.legend = FALSE, linetype= 1, size = 1.1, color = "red") +
   theme(axis.text.y = element_text(size = 9)) +
   theme(axis.text.x = element_text(size = 9)) +
   theme(axis.title = element_text(color = "black",  size = 9)) +
@@ -314,7 +300,7 @@ ggplot(mod_es$`Log SNAP`, aes(x = event, y = estimate, ymin = conf.low, ymax = c
   geom_hline(yintercept = average_model$`Log SNAP`$estimate, colour = "red", linetype = "dashed") +  # Dashed red line
   geom_text(aes(x = Inf, y = average_model$`Log SNAP`$estimate, label = sprintf("ETWFE Estimate = %.4f (%.4f)", average_model$`Log SNAP`$estimate, average_model$`Log SNAP`$std.error)),
             hjust = 1.1, vjust = -1, color = "black")  # Text annotation
-ggsave(path = figures_wd, filename = "plot04-ln_snap_event_study.png", dpi = 300)
+ggsave(path = figures_wd, filename = "plot52-ln_snap_event_study-third.png", dpi = 300)
 
 ## SNAP
 ggplot(mod_es$`SNAP`, aes(x = event, y = estimate, ymin = conf.low, ymax = conf.high)) +
@@ -324,7 +310,6 @@ ggplot(mod_es$`SNAP`, aes(x = event, y = estimate, ymin = conf.low, ymax = conf.
   labs(x = "Years post treatment", y = "Effect on SNAP") +
   theme_customs()+  
   geom_hline(yintercept = 0, colour = "black", linetype = "dotted") +
-  geom_pointrange(aes(ymin = conf.low, ymax = conf.high), show.legend = FALSE, linetype= 1, size = 1.1, color = "red") +
   theme(axis.text.y = element_text(size = 9)) +
   theme(axis.text.x = element_text(size = 9)) +
   theme(axis.title = element_text(color = "black",  size = 9)) +
@@ -332,7 +317,7 @@ ggplot(mod_es$`SNAP`, aes(x = event, y = estimate, ymin = conf.low, ymax = conf.
   geom_hline(yintercept = average_model$`SNAP`$estimate, colour = "red", linetype = "dashed") +  # Dashed red line
   geom_text(aes(x = Inf, y = average_model$`SNAP`$estimate, label = sprintf("ETWFE Estimate = %.4f (%.4f)", average_model$`SNAP`$estimate, average_model$`SNAP`$std.error)),
             hjust = 1.1, vjust = -1, color = "black")  # Text annotation
-ggsave(path = figures_wd, filename = "plot05-snap_event_study.png", dpi = 300)
+ggsave(path = figures_wd, filename = "plot53-snap_event_study-third.png", dpi = 300)
 
 ## Poverty Line
 ggplot(mod_es$`Poverty Line`, aes(x = event, y = estimate, ymin = conf.low, ymax = conf.high)) +
@@ -342,7 +327,6 @@ ggplot(mod_es$`Poverty Line`, aes(x = event, y = estimate, ymin = conf.low, ymax
   labs(x = "Years post treatment", y = "Effect on poverty line") +
   theme_customs()+  
   geom_hline(yintercept = 0, colour = "black", linetype = "dotted") +
-  geom_pointrange(aes(ymin = conf.low, ymax = conf.high), show.legend = FALSE, linetype= 1, size = 1.1, color = "red") +
   theme(axis.text.y = element_text(size = 9)) +
   theme(axis.text.x = element_text(size = 9)) +
   theme(axis.title = element_text(color = "black",  size = 9)) +
@@ -350,7 +334,7 @@ ggplot(mod_es$`Poverty Line`, aes(x = event, y = estimate, ymin = conf.low, ymax
   geom_hline(yintercept = average_model$`Poverty Line`$estimate, colour = "red", linetype = "dashed") +  # Dashed red line
   geom_text(aes(x = Inf, y = average_model$`Poverty Line`$estimate, label = sprintf("ETWFE Estimate = %.4f (%.4f)", average_model$`Poverty Line`$estimate, average_model$`Poverty Line`$std.error)),
             hjust = 1.1, vjust = -1, color = "black")  # Text annotation
-ggsave(path = figures_wd, filename = "plot06-poverty_line_event_study.png", dpi = 300)
+ggsave(path = figures_wd, filename = "plot54-poverty_line_event_study-third.png", dpi = 300)
 
 ## Food Insecure
 ggplot(mod_es$`Food Insecure`, aes(x = event, y = estimate, ymin = conf.low, ymax = conf.high)) +
@@ -358,9 +342,9 @@ ggplot(mod_es$`Food Insecure`, aes(x = event, y = estimate, ymin = conf.low, yma
   geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = 0.2, color = "red") +  # Error bars in black
   geom_point(size = 3, color = "black") +  # Points in red
   labs(x = "Years post treatment", y = "Effect on food insecure") +
+  xlim(0,10) +
   theme_customs()+  
   geom_hline(yintercept = 0, colour = "black", linetype = "dotted") +
-  geom_pointrange(aes(ymin = conf.low, ymax = conf.high), show.legend = FALSE, linetype= 1, size = 1.1, color = "red") +
   theme(axis.text.y = element_text(size = 9)) +
   theme(axis.text.x = element_text(size = 9)) +
   theme(axis.title = element_text(color = "black",  size = 9)) +
@@ -368,7 +352,7 @@ ggplot(mod_es$`Food Insecure`, aes(x = event, y = estimate, ymin = conf.low, yma
   geom_hline(yintercept = average_model$`Food Insecure`$estimate, colour = "red", linetype = "dashed") +  # Dashed red line
   geom_text(aes(x = Inf, y = average_model$`Food Insecure`$estimate, label = sprintf("ETWFE Estimate = %.4f (%.4f)", average_model$`Food Insecure`$estimate, average_model$`Food Insecure`$std.error)),
             hjust = 1.1, vjust = -1, color = "black")  # Text annotation
-ggsave(path = figures_wd, filename = "plot07-food_insecure_event_study.png", dpi = 300)
+ggsave(path = figures_wd, filename = "plot55-food_insecure_event_study-third.png", dpi = 300)
 
 ## Food Insecure Child
 ggplot(mod_es$`Food Insecure Child`, aes(x = event, y = estimate, ymin = conf.low, ymax = conf.high)) +
@@ -376,9 +360,9 @@ ggplot(mod_es$`Food Insecure Child`, aes(x = event, y = estimate, ymin = conf.lo
   geom_errorbar(aes(ymin = conf.low, ymax = conf.high), width = 0.2, color = "red") +  # Error bars in black
   geom_point(size = 3, color = "black") +  # Points in red
   labs(x = "Years post treatment", y = "Effect on food insecure child") +
+  xlim(0,10) +
   theme_customs()+  
   geom_hline(yintercept = 0, colour = "black", linetype = "dotted") +
-  geom_pointrange(aes(ymin = conf.low, ymax = conf.high), show.legend = FALSE, linetype= 1, size = 1.1, color = "red") +
   theme(axis.text.y = element_text(size = 9)) +
   theme(axis.text.x = element_text(size = 9)) +
   theme(axis.title = element_text(color = "black",  size = 9)) +
@@ -386,23 +370,4 @@ ggplot(mod_es$`Food Insecure Child`, aes(x = event, y = estimate, ymin = conf.lo
   geom_hline(yintercept = average_model$`Food Insecure Child`$estimate, colour = "red", linetype = "dashed") +  # Dashed red line
   geom_text(aes(x = Inf, y = average_model$`Food Insecure Child`$estimate, label = sprintf("ETWFE Estimate = %.4f (%.4f)", average_model$`Food Insecure Child`$estimate, average_model$`Food Insecure Child`$std.error)),
             hjust = 1.1, vjust = -1, color = "black")  # Text annotation
-ggsave(path = figures_wd, filename = "plot08-food_insecure_child_event_study.png", dpi = 300)
-
-
-
-# mod_es_i = etwfe(
-#   ln_snap ~ 1, 
-#   tvar = year, 
-#   gvar = first_treat, 
-#   data = CPS_dates,
-#   ivar = county  # NEW: Use unit-level (county) FEs
-#   ) |>
-#   emfx("event", collapse = FALSE)
-
-# modelsummary(
-#   mod_es_i,
-#   shape             = term:event:statistic ~ model,
-#   stars             = c('***' = 0.01, '**' = 0.05, '*' = 0.1),
-#   coef_rename       = rename_fn,
-#   gof_omit          = "Adj|Within|IC|RMSE"
-# )
+ggsave(path = figures_wd, filename = "plot56-food_insecure_child_event_study-third.png", dpi = 300)
