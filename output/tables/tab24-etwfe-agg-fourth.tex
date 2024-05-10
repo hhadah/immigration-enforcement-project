@@ -1,0 +1,29 @@
+\begin{table}[H]
+\centering\centering
+\caption{Extended Two Way Fixed Effects: Aggregated Effects \label{tab:etwfe-agg}}
+\centering
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{
+\begin{threeparttable}
+\begin{tabular}[t]{lcccccccc}
+\toprule
+  & Poor Health & School Lunch & Log School Lunch & Log SNAP & SNAP & Poverty Line & Food Insecure & Food Insecure Child\\
+\midrule
+.Dtreat & \num{0} & \num{0.022}*** & \num{0.141}*** & \num{-0.043} & \num{-0.004} & \num{-0.017}*** & \num{0.054} & \num{0.065}\\
+ & (\num{0}) & (\num{0.005}) & (\num{0.031}) & (\num{0.035}) & (\num{0.004}) & (\num{0.003}) & (\num{0.044}) & (\num{0.043})\\
+\midrule
+Observations & \num{103,926} & \num{103,926} & \num{103,926} & \num{103,926} & \num{103,926} & \num{103,926} & \num{5,666} & \num{5,251}\\
+Cohort FE & X & X & X & X & X & X & X & X\\
+Year FE & X & X & X & X & X & X & X & X\\
+\bottomrule
+\multicolumn{9}{l}{\rule{0pt}{1em}* p $<$ 0.1, ** p $<$ 0.05, *** p $<$ 0.01}\\
+\end{tabular}
+\begin{tablenotes}
+\small
+\item[1] \footnotesize{Each column is the results of the aggregat effects of extended two-way fixed effects estimation. 
+                      Standard errors are clustered on the county level.}
+\item[2] \footnotesize{The samples include fourth generation+ Hispanic children ages 17 and below who live in intact families. 
+                      Fourth-generation+ are native born with native-born parents, all grandparents are born in the United States, and one parent self-reported Hispanic identity.}
+\item[3] \footnotesize{Data source is the 1994-2019 Current Population Survey.}
+\end{tablenotes}
+\end{threeparttable}}
+\end{table}
