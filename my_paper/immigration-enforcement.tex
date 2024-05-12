@@ -3,7 +3,7 @@
 \input{fragments/preamble_packages.tex}
 \input{fragments/preamble_layout.tex}
 \input{fragments/preamble_citation.tex}
-% \bibliography{bib/DepressionPaper}
+% \bibliography{bib/}
 
 \makeatother
 
@@ -11,7 +11,7 @@
 
 \title{}
 
-\author{\href{https://hussainhadah.com/}{Hussain Hadah} \thanks{Department of Economics, Tulane University, 6823 St. Charles Ave., New Orleans, LA 70118, United States (e-mail: \href{mailto:hhadah@tulane.edu}{hhadah@tulane.edu}).}}
+\author{\href{https://hussainhadah.com/}{Hussain Hadah}\thanks{Department of Economics, Tulane University, 6823 St. Charles Ave., New Orleans, LA 70118, United States (e-mail: \href{mailto:hhadah@tulane.edu}{hhadah@tulane.edu}).} \quad \href{https://austindenteh.com/}{Augustine Denteh}\thanks{Department of Economics, Tulane University, 6823 St. Charles Ave., New Orleans, LA 70118, United States (e-mail: \href{mailto:adenteh@tulane.edu}{adenteh@tulane.edu}).}}
 
 
 \maketitle
@@ -27,7 +27,973 @@
 \vfill
 \pagebreak{}
 
-\section{Introduction}
+\section{Effect of Immigration Enforcement on Hispanic Identity}
+
+\begin{figure}[H]
+  \caption{Immigration Enforcement and Hispanic Identity by Generation}
+  \label{fig:hispanic-generations}
+  \centering
+
+  \begin{subfigure}[b]{0.30\textwidth} % Smaller width for each subfigure
+    \centering
+    \caption{All Generations}
+    \includegraphics[width=\linewidth]{figures/hispanic_event_study.png}
+    \label{fig:hispanic-event-study-all}
+  \end{subfigure}
+  \hfill % Horizontal space between the subfigures
+  \begin{subfigure}[b]{0.30\textwidth}
+    \centering
+    \caption{First Generation}
+    \includegraphics[width=\linewidth]{figures/firstgen-hispanic_event_study.png}
+    \label{fig:hispanic-event-study-first}
+  \end{subfigure}
+  \hfill % Horizontal space between the subfigures
+  \begin{subfigure}[b]{0.30\textwidth}
+    \centering
+    \caption{Second Generation}
+    \includegraphics[width=\linewidth]{figures/secondgen-hispanic_event_study.png}
+    \label{fig:hispanic-event-study-second}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.30\textwidth}
+    \centering
+    \caption{Third Generation}
+    \includegraphics[width=\linewidth]{figures/thirdgen-hispanic_event_study.png}
+    \label{fig:hispanic-event-study-third}
+  \end{subfigure}
+  \hfill % Horizontal space to help center the last subfigure
+  \begin{subfigure}[b]{0.30\textwidth}
+    \centering
+    \caption{Fourth Generation+}
+    \includegraphics[width=\linewidth]{figures/fourthgen-hispanic_event_study.png}
+    \label{fig:hispanic-event-study-fourth}
+  \end{subfigure}
+  \hfill % Empty subfigure space to maintain symmetry
+  \begin{subfigure}[b]{0.30\textwidth}
+    \centering
+    \label{fig:empty} % Empty subfigure for maintaining layout
+  \end{subfigure}
+
+\end{figure}
+
+\pagebreak
+
+\begin{figure}[H]
+  \caption{Detailed Analysis of Second Generation Hispanic Identity by Parents' Type}
+  \label{fig:second-gen-detailed}
+  \centering
+
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \caption{Second Generation}
+    \includegraphics[width=\linewidth]{figures/secondgen-hispanic_event_study.png}
+    \label{fig:second-gen-all}
+  \end{subfigure}
+  \hfill % Horizontal space between the subfigures
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \caption{Both Parents Born in Spanish-Speaking Country}
+    \includegraphics[width=\linewidth]{figures/secondgen-hh-hispanic_event_study.png}
+    \label{fig:second-gen-hh}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \caption{Father Born in Spanish-Speaking Country Native Mother} 
+    \includegraphics[width=\linewidth]{figures/secondgen-hw-hispanic_event_study.png}
+    \label{fig:second-gen-hw}
+  \end{subfigure}
+  \hfill % Horizontal space between the subfigures
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \caption{Father Native Mother Born in Spanish-Speaking Country}
+    \includegraphics[width=\linewidth]{figures/secondgen-wh-hispanic_event_study.png}
+    \label{fig:second-gen-wh}
+  \end{subfigure}
+
+\end{figure}
+
+\pagebreak
+
+\begin{figure}[H]
+  \caption{Analysis of Third Generation Hispanic Identity By Number of Grandparents Born in Spanish-Speaking Country}
+  \label{fig:third-gen-detailed}
+  \centering
+
+  \begin{subfigure}[b]{0.30\textwidth}
+    \centering
+    \caption{Third Generation}
+    \includegraphics[width=\linewidth]{figures/thirdgen-hispanic_event_study.png}
+    \label{fig:third-gen-general}
+  \end{subfigure}
+  \hfill % Horizontal space between the subfigures
+  \begin{subfigure}[b]{0.30\textwidth}
+    \centering
+    \caption{One Grandparent Born in Spanish-Speaking Country}
+    \includegraphics[width=\linewidth]{figures/thirdgen-one-hispanic_event_study.png}
+    \label{fig:third-gen-one}
+  \end{subfigure}
+  \hfill % Horizontal space between the subfigures
+  \begin{subfigure}[b]{0.30\textwidth}
+    \centering
+    \caption{Two Grandparents Born in Spanish-Speaking Country}
+    \includegraphics[width=\linewidth]{figures/thirdgen-two-hispanic_event_study.png}
+    \label{fig:third-gen-two}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.30\textwidth}
+    \centering
+    \caption{Three Grandparents Born in Spanish-Speaking Country}
+    \includegraphics[width=\linewidth]{figures/thirdgen-three-hispanic_event_study.png}
+    \label{fig:third-gen-three}
+  \end{subfigure}
+  \hfill % Horizontal space to center the last subfigure in the row
+  \begin{subfigure}[b]{0.30\textwidth}
+    \centering
+    \caption{All Grandparents Born in Spanish-Speaking Country}
+    \includegraphics[width=\linewidth]{figures/thirdgen-four-hispanic_event_study.png}
+    \label{fig:third-gen-four}
+  \end{subfigure}
+  \hfill % Empty subfigure space to maintain symmetry
+  \begin{subfigure}[b]{0.30\textwidth}
+    \centering
+    \label{fig:empty} % Empty subfigure for maintaining layout
+  \end{subfigure}
+
+\end{figure}
+
+\pagebreak
+
+\section{Effect of Immigration Enforcement on Children's Outcomes: All Generations}
+\begin{figure}[H]
+  \caption{Effect of Immigration Enforcement on Children's Outcomes: All Generations}
+  \centering
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Poor Health}
+    \includegraphics[width=\linewidth]{figures/plot01-poor_health_event_study.png}
+    \label{fig:poor-health}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of School Lunch Value}
+    \includegraphics[width=\linewidth]{figures/plot02-ln_schl_lunch_event_study.png}
+    \label{fig:ln-schl-lunch}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{School Lunch Participation}
+    \includegraphics[width=\linewidth]{figures/plot03-schl_lunch_event_study.png}
+    \label{fig:schl-lunch}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of SNAP Value}
+    \includegraphics[width=\linewidth]{figures/plot04-ln_snap_event_study.png}
+    \label{fig:ln-snap}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{SNAP Participation}
+    \includegraphics[width=\linewidth]{figures/plot05-snap_event_study.png}
+    \label{fig:snap}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Below Poverty Line}
+    \includegraphics[width=\linewidth]{figures/plot06-poverty_line_event_study.png}
+    \label{fig:poverty-line}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity}
+    \includegraphics[width=\linewidth]{figures/plot07-food_insecure_event_study.png}
+    \label{fig:food-insecure}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity Among Children}
+    \includegraphics[width=\linewidth]{figures/plot08-food_insecure_child_event_study.png}
+    \label{fig:food-insecure-child}
+  \end{subfigure}
+
+\end{figure}
+
+\pagebreak
+
+\section{Effect of Immigration Enforcement on Children's Outcomes: First Generation}
+\begin{figure}[H]
+  \caption{Effect of Immigration Enforcement on Children's Outcomes: First Generation}
+  \centering
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Poor Health}
+    \includegraphics[width=\linewidth]{figures/plot09-poor_health_event_study-first.png}
+    \label{fig:poor-health-first}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of School Lunch Value}
+    \includegraphics[width=\linewidth]{figures/plot10-ln_schl_lunch_event_study-first.png}
+    \label{fig:ln-schl-lunch-first}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{School Lunch Participation}
+    \includegraphics[width=\linewidth]{figures/plot11-schl_lunch_event_study-first.png}
+    \label{fig:schl-lunch-first}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of SNAP Value}
+    \includegraphics[width=\linewidth]{figures/plot12-ln_snap_event_study-first.png}
+    \label{fig:ln-snap-first}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{SNAP Participation}
+    \includegraphics[width=\linewidth]{figures/plot13-snap_event_study-first.png}
+    \label{fig:snap-first}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Below Poverty Line}
+    \includegraphics[width=\linewidth]{figures/plot14-poverty_line_event_study-first.png}
+    \label{fig:poverty-line-first}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity}
+    \includegraphics[width=\linewidth]{figures/plot15-food_insecure_event_study-first.png}
+    \label{fig:food-insecure-first}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity Among Children}
+    \includegraphics[width=\linewidth]{figures/plot16-food_insecure_child_event_study-first.png}
+    \label{fig:food-insecure-child-first}
+  \end{subfigure}
+
+\end{figure}
+
+\pagebreak
+
+\section{Effect of Immigration Enforcement on Children's Outcomes: Second Generation}
+\begin{figure}[H]
+  \caption{Effect of Immigration Enforcement on Children's Outcomes: Second Generation}
+  \centering
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Poor Health}
+    \includegraphics[width=\linewidth]{figures/plot17-poor_health_event_study-second.png}
+    \label{fig:poor-health-second}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of School Lunch Value}
+    \includegraphics[width=\linewidth]{figures/plot18-ln_schl_lunch_event_study-second.png}
+    \label{fig:ln-schl-lunch-second}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{School Lunch Participation}
+    \includegraphics[width=\linewidth]{figures/plot19-schl_lunch_event_study-second.png}
+    \label{fig:schl-lunch-second}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of SNAP Value}
+    \includegraphics[width=\linewidth]{figures/plot20-ln_snap_event_study-second.png}
+    \label{fig:ln-snap-second}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{SNAP Participation}
+    \includegraphics[width=\linewidth]{figures/plot21-snap_event_study-second.png}
+    \label{fig:snap-second}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Below Poverty Line}
+    \includegraphics[width=\linewidth]{figures/plot23-poverty_line_event_study-second.png}
+    \label{fig:poverty-line-second}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity}
+    \includegraphics[width=\linewidth]{figures/plot24-food_insecure_event_study-second.png}
+    \label{fig:food-insecure-second}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity Among Children}
+    \includegraphics[width=\linewidth]{figures/plot25-food_insecure_child_event_study-second.png}
+    \label{fig:food-insecure-child-second}
+  \end{subfigure}
+
+\end{figure}
+
+\pagebreak
+\section{Effect of Immigration Enforcement on Children's Outcomes: Second Generation (Parents from Spanish-speaking Countries)}
+\begin{figure}[H]
+  \caption{Effect of Immigration Enforcement on Children's Outcomes: Second Generation (Parents from Spanish-speaking Countries)}
+  \centering
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Poor Health}
+    \includegraphics[width=\linewidth]{figures/plot26-poor_health_event_study-secgen-hh.png}
+    \label{fig:poor-health-secgen-hh}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of School Lunch Value}
+    \includegraphics[width=\linewidth]{figures/plot27-ln_schl_lunch_event_study-secgen-hh.png}
+    \label{fig:ln-schl-lunch-secgen-hh}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{School Lunch Participation}
+    \includegraphics[width=\linewidth]{figures/plot28-schl_lunch_event_study-secgen-hh.png}
+    \label{fig:schl-lunch-secgen-hh}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of SNAP Value}
+    \includegraphics[width=\linewidth]{figures/plot29-ln_snap_event_study-secgen-hh.png}
+    \label{fig:ln-snap-secgen-hh}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{SNAP Participation}
+    \includegraphics[width=\linewidth]{figures/plot30-snap_event_study-secgen-hh.png}
+    \label{fig:snap-secgen-hh}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Below Poverty Line}
+    \includegraphics[width=\linewidth]{figures/plot31-poverty_line_event_study-secgen-hh.png}
+    \label{fig:poverty-line-secgen-hh}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity}
+    \includegraphics[width=\linewidth]{figures/plot32-food_insecure_event_study-secgen-hh.png}
+    \label{fig:food-insecure-secgen-hh}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity Among Children}
+    \includegraphics[width=\linewidth]{figures/plot33-food_insecure_child_event_study-secgen-hh.png}
+    \label{fig:food-insecure-child-secgen-hh}
+  \end{subfigure}
+
+\end{figure}
+
+\pagebreak
+
+\section{Effect of Immigration Enforcement on Children's Outcomes: Second Generation (Father Spanish-speaking birthplace, Mother Native-born)}
+\begin{figure}[H]
+  \caption{Effect of Immigration Enforcement on Second Generation Outcomes: Father Spanish-speaking birthplace, Mother Native-born}
+  \centering
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Poor Health}
+    \includegraphics[width=\linewidth]{figures/plot34-poor_health_event_study-secgen-hw.png}
+    \label{fig:poor-health-secgen-hw}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of School Lunch Value}
+    \includegraphics[width=\linewidth]{figures/plot35-ln_schl_lunch_event_study-secgen-hw.png}
+    \label{fig:ln-schl-lunch-secgen-hw}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{School Lunch Participation}
+    \includegraphics[width=\linewidth]{figures/plot36-schl_lunch_event_study-secgen-hw.png}
+    \label{fig:schl-lunch-secgen-hw}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of SNAP Value}
+    \includegraphics[width=\linewidth]{figures/plot37-ln_snap_event_study-secgen-hw.png}
+    \label{fig:ln-snap-secgen-hw}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{SNAP Participation}
+    \includegraphics[width=\linewidth]{figures/plot38-snap_event_study-secgen-hw.png}
+    \label{fig:snap-secgen-hw}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Below Poverty Line}
+    \includegraphics[width=\linewidth]{figures/plot39-poverty_line_event_study-secgen-hw.png}
+    \label{fig:poverty-line-secgen-hw}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity}
+    \includegraphics[width=\linewidth]{figures/plot40-food_insecure_event_study-secgen-hw.png}
+    \label{fig:food-insecure-secgen-hw}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity Among Children}
+    \includegraphics[width=\linewidth]{figures/plot41-food_insecure_child_event_study-secgen-hw.png}
+    \label{fig:food-insecure-child-secgen-hw}
+  \end{subfigure}
+
+\end{figure}
+
+\pagebreak
+
+\section{Effect of Immigration Enforcement on Children's Outcomes: Second Generation (Father Native-born, Mother Spanish-speaking Birthplace)}
+\begin{figure}[H]
+  \caption{Effect of Immigration Enforcement on Second Generation Outcomes: Father Native-born, Mother Spanish-speaking Birthplace}
+  \centering
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Poor Health}
+    \includegraphics[width=\linewidth]{figures/plot34-poor_health_event_study-secgen-wh.png}
+    \label{fig:poor-health-secgen-wh}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of School Lunch Value}
+    \includegraphics[width=\linewidth]{figures/plot42-ln_schl_lunch_event_study-secgen-wh.png}
+    \label{fig:ln-schl-lunch-secgen-wh}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{School Lunch Participation}
+    \includegraphics[width=\linewidth]{figures/plot43-schl_lunch_event_study-secgen-wh.png}
+    \label{fig:schl-lunch-secgen-wh}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of SNAP Value}
+    \includegraphics[width=\linewidth]{figures/plot44-ln_snap_event_study-secgen-wh.png}
+    \label{fig:ln-snap-secgen-wh}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{SNAP Participation}
+    \includegraphics[width=\linewidth]{figures/plot45-snap_event_study-secgen-wh.png}
+    \label{fig:snap-secgen-wh}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Below Poverty Line}
+    \includegraphics[width=\linewidth]{figures/plot46-poverty_line_event_study-secgen-wh.png}
+    \label{fig:poverty-line-secgen-wh}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity}
+    \includegraphics[width=\linewidth]{figures/plot47-food_insecure_event_study-secgen-wh.png}
+    \label{fig:food-insecure-secgen-wh}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity Among Children}
+    \includegraphics[width=\linewidth]{figures/plot48-food_insecure_child_event_study-secgen-wh.png}
+    \label{fig:food-insecure-child-secgen-wh}
+  \end{subfigure}
+
+\end{figure}
+
+\pagebreak
+
+\section{Effect of Immigration Enforcement on Children's Outcomes: Third Generation}
+\begin{figure}[H]
+  \caption{Effect of Immigration Enforcement on Third Generation Outcomes}
+  \centering
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Poor Health}
+    \includegraphics[width=\linewidth]{figures/plot49-poor_health_event_study-third.png}
+    \label{fig:poor-health-third}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of School Lunch Value}
+    \includegraphics[width=\linewidth]{figures/plot50-ln_schl_lunch_event_study-third.png}
+    \label{fig:ln-schl-lunch-third}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{School Lunch Participation}
+    \includegraphics[width=\linewidth]{figures/plot51-schl_lunch_event_study-third.png}
+    \label{fig:schl-lunch-third}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of SNAP Value}
+    \includegraphics[width=\linewidth]{figures/plot52-ln_snap_event_study-third.png}
+    \label{fig:ln-snap-third}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{SNAP Participation}
+    \includegraphics[width=\linewidth]{figures/plot53-snap_event_study-third.png}
+    \label{fig:snap-third}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Below Poverty Line}
+    \includegraphics[width=\linewidth]{figures/plot54-poverty_line_event_study-third.png}
+    \label{fig:poverty-line-third}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity}
+    \includegraphics[width=\linewidth]{figures/plot55-food_insecure_event_study-third.png}
+    \label{fig:food-insecure-third}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity Among Children}
+    \includegraphics[width=\linewidth]{figures/plot56-food_insecure_child_event_study-third.png}
+    \label{fig:food-insecure-child-third}
+  \end{subfigure}
+
+\end{figure}
+
+\pagebreak
+
+\section{Effect of Immigration Enforcement on Children's Outcomes: Third Generation (One Hispanic Grandparent)}
+\begin{figure}[H]
+  \caption{Effect of Immigration Enforcement on Third Generation Outcomes (One Hispanic Grandparent)}
+  \centering
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Poor Health}
+    \includegraphics[width=\linewidth]{figures/plot57-poor_health_event_study-third-one.png}
+    \label{fig:poor-health-third-one}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of School Lunch Value}
+    \includegraphics[width=\linewidth]{figures/plot58-ln_schl_lunch_event_study-third-one.png}
+    \label{fig:ln-schl-lunch-third-one}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{School Lunch Participation}
+    \includegraphics[width=\linewidth]{figures/plot59-schl_lunch_event_study-third-one.png}
+    \label{fig:schl-lunch-third-one}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of SNAP Value}
+    \includegraphics[width=\linewidth]{figures/plot60-ln_snap_event_study-third-one.png}
+    \label{fig:ln-snap-third-one}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{SNAP Participation}
+    \includegraphics[width=\linewidth]{figures/plot61-snap_event_study-third-one.png}
+    \label{fig:snap-third-one}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Below Poverty Line}
+    \includegraphics[width=\linewidth]{figures/plot62-poverty_line_event_study-third-one.png}
+    \label{fig:poverty-line-third-one}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity}
+    \includegraphics[width=\linewidth]{figures/plot63-food_insecure_event_study-third-one.png}
+    \label{fig:food-insecure-third-one}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity Among Children}
+    \includegraphics[width=\linewidth]{figures/plot64-food_insecure_child_event_study-third-one.png}
+    \label{fig:food-insecure-child-third-one}
+  \end{subfigure}
+
+\end{figure}
+
+\pagebreak
+
+\section{Effect of Immigration Enforcement on Children's Outcomes: Third Generation (Two Hispanic Grandparents)}
+\begin{figure}[H]
+  \caption{Effect of Immigration Enforcement on Third Generation Outcomes (Two Hispanic Grandparents)}
+  \centering
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Poor Health}
+    \includegraphics[width=\linewidth]{figures/plot65-poor_health_event_study-third-two.png}
+    \label{fig:poor-health-third-two}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of School Lunch Value}
+    \includegraphics[width=\linewidth]{figures/plot66-ln_schl_lunch_event_study-third-two.png}
+    \label{fig:ln-schl-lunch-third-two}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{School Lunch Participation}
+    \includegraphics[width=\linewidth]{figures/plot67-schl_lunch_event_study-third-two.png}
+    \label{fig:schl-lunch-third-two}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of SNAP Value}
+    \includegraphics[width=\linewidth]{figures/plot68-ln_snap_event_study-third-two.png}
+    \label{fig:ln-snap-third-two}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{SNAP Participation}
+    \includegraphics[width=\linewidth]{figures/plot69-snap_event_study-third-two.png}
+    \label{fig:snap-third-two}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Below Poverty Line}
+    \includegraphics[width=\linewidth]{figures/plot70-poverty_line_event_study-third-two.png}
+    \label{fig:poverty-line-third-two}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity}
+    \includegraphics[width=\linewidth]{figures/plot71-food_insecure_event_study-third-two.png}
+    \label{fig:food-insecure-third-two}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity Among Children}
+    \includegraphics[width=\linewidth]{figures/plot72-food_insecure_child_event_study-third-two.png}
+    \label{fig:food-insecure-child-third-two}
+  \end{subfigure}
+
+\end{figure}
+
+\pagebreak
+
+\section{Effect of Immigration Enforcement on Children's Outcomes: Third Generation (Three Hispanic Grandparents)}
+\begin{figure}[H]
+  \caption{Effect of Immigration Enforcement on Third Generation Outcomes (Three Hispanic Grandparents)}
+  \centering
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Poor Health}
+    \includegraphics[width=\linewidth]{figures/plot73-poor_health_event_study-third-three.png}
+    \label{fig:poor-health-third-three}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of School Lunch Value}
+    \includegraphics[width=\linewidth]{figures/plot74-ln_schl_lunch_event_study-third-three.png}
+    \label{fig:ln-schl-lunch-third-three}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{School Lunch Participation}
+    \includegraphics[width=\linewidth]{figures/plot75-schl_lunch_event_study-third-three.png}
+    \label{fig:schl-lunch-third-three}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of SNAP Value}
+    \includegraphics[width=\linewidth]{figures/plot76-ln_snap_event_study-third-three.png}
+    \label{fig:ln-snap-third-three}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{SNAP Participation}
+    \includegraphics[width=\linewidth]{figures/plot77-snap_event_study-third-three.png}
+    \label{fig:snap-third-three}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Below Poverty Line}
+    \includegraphics[width=\linewidth]{figures/plot78-poverty_line_event_study-third-three.png}
+    \label{fig:poverty-line-third-three}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity}
+    \includegraphics[width=\linewidth]{figures/plot79-food_insecure_event_study-third-three.png}
+    \label{fig:food-insecure-third-three}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity Among Children}
+    \includegraphics[width=\linewidth]{figures/plot80-food_insecure_child_event_study-third-three.png}
+    \label{fig:food-insecure-child-third-three}
+  \end{subfigure}
+
+\end{figure}
+
+\pagebreak
+
+\section{Effect of Immigration Enforcement on Children's Outcomes: Third Generation (Four Hispanic Grandparents)}
+\begin{figure}[H]
+  \caption{Effect of Immigration Enforcement on Third Generation Outcomes (Four Hispanic Grandparents)}
+  \centering
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Poor Health}
+    \includegraphics[width=\linewidth]{figures/plot81-poor_health_event_study-third-four.png}
+    \label{fig:poor-health-third-four}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of School Lunch Value}
+    \includegraphics[width=\linewidth]{figures/plot82-ln_schl_lunch_event_study-third-four.png}
+    \label{fig:ln-schl-lunch-third-four}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{School Lunch Participation}
+    \includegraphics[width=\linewidth]{figures/plot83-schl_lunch_event_study-third-four.png}
+    \label{fig:schl-lunch-third-four}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of SNAP Value}
+    \includegraphics[width=\linewidth]{figures/plot84-ln_snap_event_study-third-four.png}
+    \label{fig:ln-snap-third-four}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{SNAP Participation}
+    \includegraphics[width=\linewidth]{figures/plot85-snap_event_study-third-four.png}
+    \label{fig:snap-third-four}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Below Poverty Line}
+    \includegraphics[width=\linewidth]{figures/plot86-poverty_line_event_study-third-four.png}
+    \label{fig:poverty-line-third-four}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity}
+    \includegraphics[width=\linewidth]{figures/plot87-food_insecure_event_study-third-four.png}
+    \label{fig:food-insecure-third-four}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity Among Children}
+    \includegraphics[width=\linewidth]{figures/plot88-food_insecure_child_event_study-third-four.png}
+    \label{fig:food-insecure-child-third-four}
+  \end{subfigure}
+
+\end{figure}
+
+\pagebreak
+
+\section{Effect of Immigration Enforcement on Children's Outcomes: Fourth Generation+}
+\begin{figure}[H]
+  \caption{Effect of Immigration Enforcement on Fourth Generation+ Outcomes}
+  \centering
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Poor Health}
+    \includegraphics[width=\linewidth]{figures/plot89-poor_health_event_study-fourth.png}
+    \label{fig:poor-health-fourth}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of School Lunch Value}
+    \includegraphics[width=\linewidth]{figures/plot90-ln_schl_lunch_event_study-fourth.png}
+    \label{fig:ln-schl-lunch-fourth}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{School Lunch Participation}
+    \includegraphics[width=\linewidth]{figures/plot91-schl_lunch_event_study-fourth.png}
+    \label{fig:schl-lunch-fourth}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Log of SNAP Value}
+    \includegraphics[width=\linewidth]{figures/plot92-ln_snap_event_study-fourth.png}
+    \label{fig:ln-snap-fourth}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{SNAP Participation}
+    \includegraphics[width=\linewidth]{figures/plot93-snap_event_study-fourth.png}
+    \label{fig:snap-fourth}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Below Poverty Line}
+    \includegraphics[width=\linewidth]{figures/plot94-poverty_line_event_study-fourth.png}
+    \label{fig:poverty-line-fourth}
+  \end{subfigure}
+
+  \vspace{0.3cm} % Adjust the vertical spacing between rows of subfigures
+
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity}
+    \includegraphics[width=\linewidth]{figures/plot95-food_insecure_event_study-fourth.png}
+    \label{fig:food-insecure-fourth}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \caption{Food Insecurity Among Children}
+    \includegraphics[width=\linewidth]{figures/plot96-food_insecure_child_event_study-fourth.png}
+    \label{fig:food-insecure-child-fourth}
+  \end{subfigure}
+
+\end{figure}
 
 
 \pagebreak
@@ -42,104 +1008,7 @@
 \begin{appendices}
 \section{Figures}\label{appendix:figs}
 
-% \begin{center}
-% \begin{figure}[H]
-% \caption{Histogram Before Targetting}
-% \includegraphics[width=\textwidth]{img/hist_dep_original.jpg} 
-% \label{fig:hist}
-% \end{figure}
-% \end{center}
 
-% \pagebreak
-
-% \begin{landscape}
-% \begin{figure}[H]
-%   \caption{Spill Over Effect of Peers' Mental Health on Own Mental Health, Academic and Behavioral Outcomes}
-%   \label{fig:health-academic-beh-a}
-%   \centering
-
-%   \begin{subfigure}[b]{0.6\textwidth}
-%     \centering
-%     \caption{Own Mental Health}
-%     \begin{minipage}{\textwidth}
-%       \includegraphics[width=\linewidth]{img/own-depression.png}
-%     \end{minipage}
-%     \label{fig:own-depression}
-%   \end{subfigure}
-%   \vspace{0.3cm} % Adjust the vertical spacing between subfigures
-%   \begin{subfigure}[b]{0.6\textwidth}
-%     \centering
-%     \caption{GPA}
-%     \begin{minipage}{\textwidth}
-%       \includegraphics[width=\linewidth]{img/gpa.png}
-%     \end{minipage}
-%     \label{fig:gpa}
-%   \end{subfigure}
-
-%   \hspace{0.05\textwidth}
-
-%   \begin{subfigure}[b]{0.6\textwidth}
-%     \centering
-%     \caption{Skipping School}
-%     \begin{minipage}{\textwidth}
-%       \includegraphics[width=\linewidth]{img/skip-school.png}
-%     \end{minipage}
-%     \label{fig:skip-school}
-%   \end{subfigure}
-% \begin{minipage}{\linewidth}
-%   {\caption*{\footnotesize{This plot presents the 2SLS estimation of the regression (equation \ref{eq:reduce-form}) with school fixed effects on mental health, academic, and behavioral outcomes. Additionally, separate IV estimations of equation (\ref{eq:reduce-form}) are provided for different subsamples. In panel (A), the IV estimation is presented for own mental health. Panel (B) shows the IV estimation for GPA. Panel (C) displays the IV estimation for skipping school without an excuse. The control variables in the analysis include sex, race, age, parental education, parental employment, parental occupation, and number of friends. Standard errors are clustered at the school level. The data source is the Add Health in-school survey.}}}
-% \end{minipage}
-% \end{figure}
-% % \end{landscape}
-
-% \pagebreak
-
-% \begin{figure}[H]
-%   \caption{Spill Over Effect of Peers' Mental Health on Own Mental Health, Academic and Behavioral Outcomes}
-%   \label{fig:health-academic-beh-b}
-%   \centering
-%   \begin{subfigure}[b]{0.6\textwidth}
-%     \centering
-%     \caption{Missing School}
-%     \begin{minipage}{\textwidth}
-%       \includegraphics[width=\linewidth]{img/miss-school.png}
-%     \end{minipage}
-%     \label{fig:miss-school}
-%   \end{subfigure}
-
-%   \vspace{0.3cm}
-
-%   \begin{subfigure}[b]{0.6\textwidth}
-%     \centering
-%     \caption{Smoking Cigarettes}
-%     \begin{minipage}{\textwidth}
-%       \includegraphics[width=\linewidth]{img/smoking-cigs.png}
-%     \end{minipage}
-%     \label{fig:smoking-cigs}
-%   \end{subfigure}
-%   \hspace{0.05\textwidth}
-%   \begin{subfigure}[b]{0.6\textwidth}
-%     \centering
-%     \caption{Intoxication}
-%     \begin{minipage}{\textwidth}
-%       \includegraphics[width=\linewidth]{img/intoxication.png}
-%     \end{minipage}
-%     \label{fig:intoxication}
-%   \end{subfigure}
-% \begin{minipage}{\linewidth}
-%   {\caption*{\footnotesize{This plot presents the 2SLS estimation of the regression (equation \ref{eq:reduce-form}) with school fixed effects on mental health, academic, and behavioral outcomes. Additionally, separate IV estimations of equation (\ref{eq:reduce-form}) are provided for different subsamples. In panel (A), the IV estimation pertains to missing school for health reasons. Panel (B) demonstrates the IV estimation for smoking, while Panel (C) covers intoxication. The control variables in the analysis include sex, race, age, parental education, parental employment, parental occupation, and number of friends. Standard errors are clustered at the school level. The data source is the Add Health in-school survey.}}}
-% \end{minipage}
-% \end{figure}
-
-
-% \newpage
-
-% \begin{center}
-% \begin{figure}[H]
-% \includegraphics[width=\textwidth]{img/hist_dep_original.jpg} 
-% \label{fig:hist1}
-% \end{figure}
-% \end{center}
 
 \newpage
 
